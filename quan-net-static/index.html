@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e18">
+  <title>ALT F4 Gaming — Quản lý quán net</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="ALT F4 Gaming">
+        <span class="brand-mark">A4</span>
+        <span><b>ALT F4</b><small>GAMING CENTER</small></span>
+      </a>
+      <div class="side-label">MENU CHÍNH</div>
+      <nav class="nav">
+        <button class="nav-link active" data-page="dashboard"><span>▦</span>Tổng quan</button>
+        <button class="nav-link" data-page="computers"><span>▣</span>Quản lý máy</button>
+        <button class="nav-link" data-page="customers"><span>♙</span>Khách hàng</button>
+        <button class="nav-link" data-page="services"><span>◈</span>Dịch vụ</button>
+        <button class="nav-link" data-page="invoices"><span>▤</span>Hóa đơn</button>
+        <button class="nav-link" data-page="reports"><span>▥</span>Báo cáo</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="online-card"><span class="pulse"></span><div><b>Hệ thống demo</b><small>Đang hoạt động</small></div></div>
+        <button class="nav-link" data-page="settings"><span>⚙</span>Cài đặt</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
+        <div class="breadcrumb"><span>ALT F4</span><i>/</i><b id="pageCrumb">Tổng quan</b></div>
+        <div class="top-actions">
+          <span class="live-dot"></span><span class="live-text">Hệ thống trực tuyến</span>
+          <div class="avatar">AD</div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="page-head">
+          <div><p class="eyebrow">GAMING CENTER MANAGEMENT</p><h1 id="pageTitle">Tổng quan</h1><p class="muted" id="pageSubtitle">Theo dõi tình hình hoạt động của quán net.</p></div>
+          <div class="head-date" id="today"></div>
+        </div>
+
+        <section class="page active" id="page-dashboard">
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>Tổng số máy</span><span class="stat-icon blue">▣</span></div><strong id="totalMachines">20</strong><small>Máy trạm trong hệ thống</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Đang hoạt động</span><span class="stat-icon green">◉</span></div><strong id="activeMachines">12</strong><small><em class="green-text">60%</em> tổng số máy</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Máy đang trống</span><span class="stat-icon violet">⌁</span></div><strong id="freeMachines">6</strong><small>Sẵn sàng phục vụ</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Doanh thu hôm nay</span><span class="stat-icon orange">₫</span></div><strong>2.450.000đ</strong><small><em class="green-text">+12,8%</em> so với hôm qua</small></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel">
+              <div class="panel-heading"><div><h2>Sơ đồ máy trạm</h2><p class="muted">Tình trạng máy tính theo khu vực</p></div><button class="text-button" data-goto="computers">Xem tất cả →</button></div>
+              <div class="legend"><span><i class="legend-dot busy"></i>Đang sử dụng</span><span><i class="legend-dot free"></i>Máy trống</span><span><i class="legend-dot repair"></i>Bảo trì</span></div>
+              <div class="mini-machines" id="miniMachines"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><h2>Hoạt động gần đây</h2><p class="muted">Nhật ký hệ thống mẫu</p></div><span class="tag">HÔM NAY</span></div>
+              <div class="activity-list">
+                <div class="activity"><span class="activity-icon green">↗</span><div><b>Máy A03 bắt đầu phiên</b><small>Khách hàng Nguyễn Văn An · 5 phút trước</small></div></div>
+                <div class="activity"><span class="activity-icon blue">＋</span><div><b>Thêm dịch vụ nước uống</b><small>Hóa đơn #HD1024 · 18 phút trước</small></div></div>
+                <div class="activity"><span class="activity-icon orange">✓</span><div><b>Thanh toán hóa đơn</b><small>Máy B06 · 32 phút trước</small></div></div>
+                <div class="activity"><span class="activity-icon violet">⚙</span><div><b>Máy C02 chuyển bảo trì</b><small>Kỹ thuật viên · 1 giờ trước</small></div></div>
+              </div>
+            </article>
+          </div>
+          <article class="panel">
+            <div class="panel-heading"><div><h2>Doanh thu trong tuần</h2><p class="muted">Số liệu minh họa (VNĐ)</p></div><span class="tag">7 NGÀY</span></div>
+            <div class="chart" aria-label="Biểu đồ doanh thu minh họa">
+              <div class="chart-y"><span>3tr</span><span>2tr</span><span>1tr</span><span>0</span></div>
+              <div class="chart-bars">
+                <div><i style="height:42%"></i><small>T2</small></div><div><i style="height:65%"></i><small>T3</small></div><div><i style="height:53%"></i><small>T4</small></div><div><i style="height:78%"></i><small>T5</small></div><div><i style="height:61%"></i><small>T6</small></div><div><i style="height:92%"></i><small>T7</small></div><div><i style="height:72%"></i><small>CN</small></div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="page" id="page-computers">
+          <div class="toolbar"><div class="filter-group" id="machineFilters"><button class="filter active" data-filter="all">Tất cả</button><button class="filter" data-filter="busy">Đang sử dụng</button><button class="filter" data-filter="free">Máy trống</button><button class="filter" data-filter="repair">Bảo trì</button></div><button class="primary-btn" id="addMachine">＋ Thêm máy</button></div>
+          <div class="panel"><div class="panel-heading"><div><h2>Danh sách máy trạm</h2><p class="muted">Chọn trạng thái để lọc danh sách máy</p></div><span class="tag">KHU A · B · C</span></div><div class="machine-grid" id="machineGrid"></div></div>
+        </section>
+
+        <section class="page" id="page-customers">
+          <div class="toolbar"><p class="muted">Danh sách khách hàng mẫu của quán</p><button class="primary-btn" id="addCustomer">＋ Thêm khách hàng</button></div>
+          <div class="panel table-panel"><table><thead><tr><th>KHÁCH HÀNG</th><th>SỐ ĐIỆN THOẠI</th><th>ĐIỂM TÍCH LŨY</th><th>TRẠNG THÁI</th></tr></thead><tbody id="customerRows"></tbody></table></div>
+        </section>
+
+        <section class="page" id="page-services">
+          <div class="toolbar"><p class="muted">Danh mục đồ ăn, thức uống và dịch vụ</p><button class="primary-btn" id="addService">＋ Thêm dịch vụ</button></div>
+          <div class="service-grid" id="serviceGrid"></div>
+        </section>
+
+        <section class="page" id="page-invoices">
+          <div class="panel table-panel"><div class="panel-heading"><div><h2>Hóa đơn gần đây</h2><p class="muted">Dữ liệu hóa đơn minh họa</p></div></div><table><thead><tr><th>MÃ HÓA ĐƠN</th><th>KHÁCH HÀNG</th><th>MÁY</th><th>THỜI GIAN</th><th>TỔNG TIỀN</th><th>TRẠNG THÁI</th></tr></thead><tbody id="invoiceRows"></tbody></table></div>
+        </section>
+
+        <section class="page" id="page-reports">
+          <div class="stats-grid"><article class="stat-card"><div class="stat-top"><span>Doanh thu tuần</span><span class="stat-icon blue">₫</span></div><strong>15.820.000đ</strong><small>Dữ liệu minh họa</small></article><article class="stat-card"><div class="stat-top"><span>Lượt khách</span><span class="stat-icon green">♙</span></div><strong>284</strong><small>Trong 7 ngày gần nhất</small></article><article class="stat-card"><div class="stat-top"><span>Giờ sử dụng</span><span class="stat-icon violet">◷</span></div><strong>1.426 giờ</strong><small>Tổng thời gian phiên</small></article></div>
+          <div class="panel"><h2>Ghi chú báo cáo</h2><p class="muted">Các con số trên chỉ phục vụ trình diễn giao diện. Website tĩnh chưa kết nối dữ liệu giao dịch thực tế.</p></div>
+        </section>
+
+        <section class="page" id="page-settings">
+          <div class="panel settings-panel"><h2>Thông tin quán</h2><label>Tên quán<input value="ALT F4 Gaming Center" id="shopName"></label><label>Địa chỉ<input value="123 Đường Gaming, TP. Cà Mau" id="shopAddress"></label><label>Giờ hoạt động<input value="07:00 - 23:00" id="shopHours"></label><button class="primary-btn" id="saveSettings">Lưu thông tin trên trình duyệt</button><p class="muted" id="settingsMessage"></p></div>
+        </section>
+        <footer>© 2026 ALT F4 Gaming Center <span>Giao diện demo · Không dùng cho giao dịch thực tế</span></footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
